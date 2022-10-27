@@ -28,10 +28,10 @@ namespace EmployeeWageProblem
                 switch (empCheck)
                 {
                     case IS_FULL_TIME:
-                        empHrs = FULL_DAY_HR;
+                        empHrs += FULL_DAY_HR;
                         break;
                     case IS_PART_TIME:
-                        empHrs = PART_TIME_HR;
+                        empHrs += PART_TIME_HR;
                         break;
                     default:
                         empHrs = 0;

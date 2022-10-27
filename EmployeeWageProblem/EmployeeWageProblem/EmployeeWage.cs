@@ -8,7 +8,7 @@ namespace EmployeeWageProblem
 {
     public class EmployeeWage
     {
-        const int WAGE_PER_HR = 20,FULL_DAY_HR =8,IS_PRESENT =0,IS_FULL_TIME=1,PART_TIME_HR = 4, IS_PART_TIME = 2;
+        const int WAGE_PER_HR = 20,FULL_DAY_HR =8,IS_PRESENT =0,IS_FULL_TIME=1,PART_TIME_HR = 4, IS_PART_TIME = 2, TOTAL_WORKING_DAYS = 20;
         Random random = new Random();
         public void Attendance()
         {
@@ -23,14 +23,20 @@ namespace EmployeeWageProblem
         {
             int dailyEmpWage = 0, empHrs =0;
             int empCheck = random.Next(0, 3);
-            switch (empCheck)
+            for (int i = 0; i < TOTAL_WORKING_DAYS; i++)
             {
-                case IS_FULL_TIME: empHrs = FULL_DAY_HR;
-                    break;
-                case IS_PART_TIME: empHrs = PART_TIME_HR;
-                    break ;
-                default: empHrs = 0;
-                    break;
+                switch (empCheck)
+                {
+                    case IS_FULL_TIME:
+                        empHrs = FULL_DAY_HR;
+                        break;
+                    case IS_PART_TIME:
+                        empHrs = PART_TIME_HR;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
+                }
             }
             //if (empCheck == IS_FULL_TIME)
             //    empHrs = FULL_DAY_HR;
